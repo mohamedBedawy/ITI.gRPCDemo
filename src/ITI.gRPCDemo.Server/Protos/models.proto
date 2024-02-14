@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "ITI.gRPCDemo.Server.Protos";
+
+// import your libraries
+import "google/protobuf/timestamp.proto";
+
+// define messages
+message TrackingMessage{
+	// define properties 
+	int32 deviceId =1;
+	int32 speed=2;
+	Location location=3;
+	google.protobuf.Timestamp stamp= 4;
+}
+// example
+ // 10 => deviceId
+ // 150 => speed
+
+ message Location{
+	 double Lat =1;
+	 double Long =2;
+ }
+
+ // message response 
+ message TrackingResponse{
+	 bool success =1;
+ }

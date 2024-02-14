@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "ITI.gRPCDemo.Server.Protos";
+
+// import your libraries
+// import "Protos/models.proto"; // we have added ProtoRoot="Protos\" to item Group for buiding 
+import "models.proto";
+
+// We have to download compiler Package for gRPC with name = "Grpc.Asp.netCore "
+// controller
+service TrackingService{
+	// define methods 
+	rpc SendMessage(TrackingMessage) returns (TrackingResponse);
+}
